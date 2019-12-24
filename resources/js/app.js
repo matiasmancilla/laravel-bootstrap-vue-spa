@@ -6,7 +6,10 @@
 
 require('./bootstrap');
 
+import Vue from 'vue';
 window.Vue = require('vue');
+import Router from 'vue-router'
+Vue.use(Router)
 
 /**
  * The following block of code may be used to automatically register your
@@ -26,7 +29,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import router from './router';
 
 const app = new Vue({
     el: '#app',
+    router,
 });
