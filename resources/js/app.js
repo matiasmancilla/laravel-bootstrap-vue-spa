@@ -8,10 +8,27 @@ require('./bootstrap');
 
 import Vue from 'vue';
 window.Vue = require('vue');
+
 import Router from 'vue-router'
 Vue.use(Router)
 
 import AxiosAjaxDetect from './common/AxiosAjaxDetect';
+
+
+//third party components
+import VueProgressBar from 'vue-progressbar'
+Vue.use(VueProgressBar,{
+    color: '#42629c',
+    failedColor: '#b71c1c',
+    thickness: '5px',
+    transition: {
+        speed: '0.2s',
+        opacity: '0.6s',
+        termination: 300
+    },
+    autoRevert: true,
+    inverse: false
+});
 import Spinner from 'vue-simple-spinner'
 import Notifications from 'vue-notification'
 Vue.use(Notifications)
@@ -28,4 +45,17 @@ const app = new Vue({
     components: {
         'vue-simple-spinner' : Spinner
     },
+    mounted(){
+        // init progress bar 
+        AxiosAjaxDetect.init(()=>{
+            this.$Progress.start();
+        },()=>{
+            this.$Progress.finish();
+        });
+    },
+    computed: {
+        showLoader() {
+            return store.getters.showLoader;
+        },
+    }
 });
