@@ -21,9 +21,8 @@
     
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    App
-                </a>
+                <router-link class="navbar-brand" :to="{ name: 'home' }">App</router-link> 
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -31,14 +30,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Admin
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <router-link :to="{ name: 'home' }" class="dropdown-item">Home</router-link> 
-                            </div>
-                        </li> 
+                        <li class="nav-item ">
+                            <router-link class="nav-link" :to="{ name: 'home' }">Home</router-link> 
+                        </li>
+                        <li class="nav-item ">
+                            <router-link class="nav-link" :to="{ name: 'forms' }">Forms</router-link> 
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
