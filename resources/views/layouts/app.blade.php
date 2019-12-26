@@ -82,7 +82,7 @@
         </main>
 
         <!-- loader -->
-            <moon-loader color="white"></moon-loader>
+        <vue-simple-spinner v-if="showLoader" size="medium" ></vue-simple-spinner>
 
 
     </div>

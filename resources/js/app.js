@@ -11,6 +11,7 @@ window.Vue = require('vue');
 import Router from 'vue-router'
 Vue.use(Router)
 
+import Spinner from 'vue-simple-spinner'
 
 
 
@@ -21,4 +22,7 @@ const app = new Vue({
     el: '#app',
     router,
     store,
+    components: {
+        'vue-simple-spinner' : Spinner
+    },
 });
