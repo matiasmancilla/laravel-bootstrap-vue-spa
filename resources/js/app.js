@@ -11,6 +11,7 @@ window.Vue = require('vue');
 import Router from 'vue-router'
 Vue.use(Router)
 
+import AxiosAjaxDetect from './common/AxiosAjaxDetect';
 import Spinner from 'vue-simple-spinner'
 import Notifications from 'vue-notification'
 Vue.use(Notifications)
