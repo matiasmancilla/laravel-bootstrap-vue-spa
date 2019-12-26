@@ -12,6 +12,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import Spinner from 'vue-simple-spinner'
+import Notifications from 'vue-notification'
+Vue.use(Notifications)
 
 
 
