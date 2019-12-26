@@ -81,9 +81,14 @@
             </transition>
         </main>
 
+        <!-- top progress bar -->
+        <vue-progress-bar></vue-progress-bar>
+
         <!-- loader -->
         <vue-simple-spinner v-if="showLoader" size="medium" ></vue-simple-spinner>
 
+        <!-- notifications -->
+        <notifications group="foo" position="top center" classes="my-style"/>
 
     </div>
     <!-- Scripts -->
