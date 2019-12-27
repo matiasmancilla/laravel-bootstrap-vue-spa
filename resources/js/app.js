@@ -1,23 +1,20 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
 
 import Vue from 'vue';
 window.Vue = require('vue');
-
 import Router from 'vue-router'
-Vue.use(Router)
-
 import AxiosAjaxDetect from './common/AxiosAjaxDetect';
+import router from './router';
+import store from './common/Store';
+Vue.use(Router)
 
 
 //third party components
 import VueProgressBar from 'vue-progressbar'
-Vue.use(VueProgressBar,{
+import Spinner from 'vue-simple-spinner'
+import Notifications from 'vue-notification'
+Vue.use(Notifications)
+Vue.use(VueProgressBar, {
     color: '#42629c',
     failedColor: '#b71c1c',
     thickness: '5px',
@@ -29,14 +26,10 @@ Vue.use(VueProgressBar,{
     autoRevert: true,
     inverse: false
 });
-import Spinner from 'vue-simple-spinner'
-import Notifications from 'vue-notification'
-Vue.use(Notifications)
 
+//custom components
+Vue.component('v-table', require('./components/VTable.vue').default);
 
-
-import router from './router';
-import store from './common/Store';
 
 const app = new Vue({
     el: '#app',
